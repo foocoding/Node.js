@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "HackYourFuture Node.js Week 1 - Lecture",
   "repository": "https://github.com/HackYourFuture/nodejs.git",
-  "main": "src/index.js",
+  "main": "Ivysproject/testingNode.js",
   "author": "George Sapkin",
   "license": "MIT",
   "devDependencies": {
