@@ -78,7 +78,7 @@ test(
     t.is(response.headers['content-type'], 'application/json',
       'Expected content type to be application/json'
     );
-    t.deepEqual(response.body, { error: 'Not found' },
+    t.deepEqual(response.body, { error: 'Not Found' },
       'Expected response to be 404 Not found'
     );
   }
