@@ -3,42 +3,41 @@
 
 const http = require('http');
 
+function printData(state, response) {
+  response.writeHead(200, {
+    'Content-Type': 'application/json'
+  });
+  let json =
+  response.write(JSON.stringify({
+    'state': state
+  }));
+}
+
 function createServer(port) {
   let state = 10;
 
   const server = http.createServer((req, response) => {
-    function printData() {
-      response.writeHead(200, {
-        'Content-Type': 'application/json'
-      });
-      let json = JSON.stringify({
-        'state': state
-      });
-      response.write(json);
-    }
-
     if (req.url == '/state') {
-      printData();
+      printData(state, response);
     }
     else if (req.url == '/add') {
       state += 1;
-      printData();
+      printData(state, response);
     }
     else if (req.url == '/subtract') {
       state -= 1;
-      printData();
+      printData(state, response);
     }
     else if (req.url == '/reset') {
       state = 10;
-      printData();
+      printData(state, response);
     }
     else {
       response.writeHead(404, {
         'Content-Type': 'application/json'});
-      let json = JSON.stringify({
+      response.write(JSON.stringify({
         'error': 'Not found'
-      });
-      response.write(json);
+      }));
     }
     response.end();
   });
