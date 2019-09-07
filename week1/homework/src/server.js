@@ -23,6 +23,42 @@ function createServer(port) {
       });
       response.write(json);
     }
+    if (req.url == '/subtract') {
+      state -= 1;
+      let json = JSON.stringify({
+        'state': state
+      });
+      response.write(json);
+    }
+    if (req.url == '/reset') {
+      state = 10;
+      let json = JSON.stringify({
+        'state': state
+      });
+      response.write(json);
+    }
+    if (req.url == '/multi2') {
+      state *= 2;
+      let json = JSON.stringify({
+        'state': state
+      });
+      response.write(json);
+    }
+    // if (req.ur == '/div2') {
+    //   state /= 2;
+    //   let json = JSON.stringify({
+    //     'state' : state
+    //   });
+    //   response.write(json);
+    // }
+    // else {
+    //   response.writeHead(404, {
+    //     'Content-Type': 'application/json'});
+    //   let json = JSON.stringify({
+    //     error: 'Not Found'
+    //   });
+    //   response.write(json);
+    // }
 
     // eslint-disable-next-line no-undef
     response.end();
