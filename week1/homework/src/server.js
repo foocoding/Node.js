@@ -7,35 +7,30 @@ function createServer(port) {
   let state = 10;
 
   const server = http.createServer((req, response) => {
-    response.writeHead(200, {
-      'Content-Type': 'application/json'
-    });
-    if (req.url == '/state') {
+    function printData() {
+      response.writeHead(200, {
+        'Content-Type': 'application/json'
+      });
       let json = JSON.stringify({
-        'state': 10
+        'state': state
       });
       response.write(json);
+    }
+
+    if (req.url == '/state') {
+      printData();
     }
     else if (req.url == '/add') {
       state += 1;
-      let json = JSON.stringify({
-        'state': state
-      });
-      response.write(json);
+      printData();
     }
     else if (req.url == '/subtract') {
       state -= 1;
-      let json = JSON.stringify({
-        'state': state
-      });
-      response.write(json);
+      printData();
     }
     else if (req.url == '/reset') {
       state = 10;
-      let json = JSON.stringify({
-        'state': state
-      });
-      response.write(json);
+      printData();
     }
     else {
       response.writeHead(404, {
@@ -45,8 +40,6 @@ function createServer(port) {
       });
       response.write(json);
     }
-
-    // eslint-disable-next-line no-undef
     response.end();
   });
 
