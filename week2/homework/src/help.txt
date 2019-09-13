@@ -1,0 +1,9 @@
+Usage: node index.js [...]
+HackYourFuture Node.js Week 2 - Homework To-Do App
+Options:
+ help         shows help text
+ list         shows current todos
+ add          adds a new toDo 
+ reset        removes all toDo list items
+ remove       removes a toDo with index number
+ update       updates a to-do item with index number
