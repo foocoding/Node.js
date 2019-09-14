@@ -31,7 +31,6 @@ function createServer(port) {
         break;
       case '/subtract':
         state--;
-        // eslint-disable-next-line no-trailing-spaces
         // response.statusCode = 200;
         showResponseToClient(response, { state }, 200);
         break;
