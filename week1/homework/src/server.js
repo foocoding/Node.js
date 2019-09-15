@@ -7,7 +7,7 @@ const http = require('http');
  */
 function showResponseToClient(response, state, statusCode) {
   response.statusCode = statusCode;
-  response.setHeader('Content-Header', 'application/json');
+  response.setHeader('Content-Type', 'application/json');
   response.write(JSON.stringify(state));
   response.end();
 }
