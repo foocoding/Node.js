@@ -14,5 +14,12 @@ function reset() {
 var fs = require('fs')
 fs.truncate('/path/to/file', 0, function(){console.log('done')})
 */
+/*
+const reset = function() {
+  fs.unlink(myFile, function(err) {
+    if (err) throw err;
+  });
+};
+*/
 
 module.exports = reset;
