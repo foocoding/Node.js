@@ -5,6 +5,7 @@ const list = require('./list');
 const append = require('./add');
 const reset = require('./reset');
 const remove = require('./remove');
+const update = require('./update');
 const help = require('./help');
 
 switch (process.argv[2]) {

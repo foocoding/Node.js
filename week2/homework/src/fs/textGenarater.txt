@@ -1,0 +1,27 @@
+To do List:
+-Go for run
+-Drink Coffee
+-Eat some Food
+-Learn Node.js
+-Learn Javascript
+
+[
+  {
+    "id": 1,
+    "task": "Drink Coffee",
+    "done": false,
+    "dueDate": "today"
+  },
+  {
+    "id": 2,
+    "task": "Learn Node.js",
+    "done": false,
+    "dueDate": "today"
+  },
+  {
+    "id": 3,
+    "task": "go for a run",
+    "done": false,
+    "dueDate": "today"
+  }
+]

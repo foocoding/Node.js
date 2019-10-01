@@ -1,0 +1,24 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "> Please help us improve and share your feedback! If you find better tutorials or links, please share them by [opening a pull request](https://github.com/FooCoding/Node.js/pulls).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suthatta/Node.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suthatta/Node.js/issues"
+  },
+  "homepage": "https://github.com/suthatta/Node.js#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3",
+    "uuid": "^3.3.3"
+  }
+}

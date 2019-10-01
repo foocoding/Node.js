@@ -1,0 +1,19 @@
+{
+  "todos": {
+    {
+      "id": 1,
+      "description": "Breakfast",
+      "status": true
+    },
+    {
+      "id": 2,
+      "description": "Lunchfast",
+      "status": false
+    },
+    {
+      "id": 3,
+      "description": "Dinner",
+      "status": false
+    }
+  }
+}
