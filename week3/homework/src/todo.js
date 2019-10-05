@@ -2,74 +2,42 @@
 const fs = require('fs');
 const uuid = require('uuid/v4');
 
+
 const default_encoding = 'utf8';
-
-class Todo {
-  constructor(filename) {
-    this._filename = filename;
-  }
-  async create(description) {
-    const todos = await this.read();
-    const todo = {
-      id: uuid(),
-      done: false,
-      description
-    };
-    todos.push(todo);
-    await this._save(todos);
-    return todo;
-  }
-  read() {
-    return new Promise(resolve => {
-      fs.readFile(this._filename, default_encoding, (err, data) => {
-        if (err) return resolve([]);
-        return resolve(JSON.parse(data));
-      });
-    });
-  }
-
+const FileName = 'todos.json';
+let words;
+const exists = fs.existsSync(FileName);
+if (exists) {
+  // Read the file
+  console.log('loading file todos');
+  const txt = fs.readFileSync(FileName, default_encoding);
+  // Parse it  back to object
+  words = JSON.parse(txt);
+} else {
+  // Otherwise start with blank list
+  console.log('No words');
+  words = {};
 }
-/*
 
-class Todo {
-
-
-  async update(id, description) {
-    const todos = await this.read();
-
-    const todo = todos.find(t => t.id === id);
-    if (todo == null) {
-      const error = new Error(`To-do with ID ${id} does not exist`);
-      error.code = 'not-found';
-      throw error;
-    }
-
-    todo.description = description;
-
-    await this._save(todos);
-
-    return todo;
-  }
-
-  async delete_(id) {
-    const todos         = await this.read();
-    const filteredTodos = todos.filter(t => t.id !== id);
-
-    return this._save(filteredTodos);
-  }
-
-  // Methods starting with underscore should not be used outside of this class
-  _save(todos) {
-    return new Promise((resolve, reject) => {
-      fs.writeFile(
-        this._filename,
-        JSON.stringify(todos, null, 2),
-        error => error == null
-          ? resolve()
-          : reject(error)
-      );
+function readTodo() {
+  return new Promise(resolve => {
+    fs.readFile(FileName, default_encoding, (error, data) => {
+      if (error)
+        return resolve([]);
+      return resolve(JSON.parse(data));
     });
-  }
+  });
 }
-*/
-module.exports = Todo;
+
+function writeFile(data) {
+  return new Promise((resolve, reject) =>
+    fs.writeFile(FileName, JSON.stringify(data), (err, data) =>
+      err ? reject(err) : resolve(data)
+    )
+  );
+}
+
+module.exports = {
+  readTodo,
+  writeFile
+};
