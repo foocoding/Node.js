@@ -56,27 +56,13 @@ app.delete('/todos', (req, res, next) => {
         .catch(err => next(err));
     });
 });
-//delete id
-/*app.delete('/todos/:id', (req, res, next) => {
-  const removeId = req.params.id;
-  readTodo().then(todos => {
-    const newTodo = data.find(function (item) {
-      //if (getID !== item.id) { alert('data not found';)}else 
-      return item.id == removeId;
-    })
-    writeFile(newTodo)
-      .then(() => res.send(`Removed ${removeId}`))
-      .catch(err => next(err));
-  });
-})
-*/
+
 //markAsDone
 app.put('/todos/:id/done', (req, res, next) => {
   const getId = req.params.id;
   readTodo()
     .then(data => {
       const doneTodo = data.find(function (item) {
-        //if (getID !== item.id) { alert('data not found';)}else 
         return item.id == getId;
       })
       doneTodo.done = true;
@@ -91,7 +77,6 @@ app.put('/todos/:id/notdone', (req, res, next) => {
   readTodo()
     .then(data => {
       const doneTodo = data.find(function (item) {
-        //if (getID !== item.id) { alert('data not found';)}else 
         return item.id == getId;
       })
       doneTodo.done = false;
