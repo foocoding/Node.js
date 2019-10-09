@@ -8,6 +8,7 @@ module.exports = {
   deleteTodo: require('./deleteTodo'),
   readTodo: require('./readTodo'),
   clearTodos: require('./clearTodos'),
-  markAsDone: require('./markAsDone')
+  markAsDone: require('./markAsDone'),
+  markAsNotDone: require('./markAsNotDone')
 
 };
