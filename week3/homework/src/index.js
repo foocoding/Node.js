@@ -9,7 +9,9 @@ const {
   updateTodo,
   deleteTodo,
   readTodo,
-  clearTodos
+  clearTodos,
+  markAsDone
+
 } = require('./actions');
 
 const Todo = require('./todo');
@@ -31,6 +33,8 @@ app.put(`/${TODO_SLUG}/:id`,    updateTodo.bind(null, todo));
 app.delete(`/${TODO_SLUG}/:id`, deleteTodo.bind(null, todo));
 app.get(`/${TODO_SLUG}/:id`,    readTodo.bind(null, todo));
 app.delete(`/${TODO_SLUG}`, clearTodos.bind(null, todo));
+app.post(`/${TODO_SLUG}/:id/done`,       markAsDone.bind(null, todo));
+
 app.listen(PORT, error => {
   if (error)
     return console.error(error);

@@ -2,9 +2,9 @@
 
 function readTodo(todo, request, response) {
   const id = request.params.id;
-  todo.read(id)
-    .then(todos => {
-      response.json({ todos });
+  todo.readById(id)
+    .then(todo => {
+      response.json({ todo });
       response.end();
     })
     .catch(({ message }) => {
