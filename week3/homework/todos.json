@@ -1,0 +1,17 @@
+[
+  {
+    "id": "7857c5ed-3771-4a67-8700-5fe77033e7ac",
+    "done": false,
+    "description": "Wash the dishes!"
+  },
+  {
+    "id": "3feabbf8-479e-4617-9bde-e4e63296a665",
+    "done": false,
+    "description": "Buy Apples!"
+  },
+  {
+    "id": "1f54ff3b-3f4a-4378-97cf-4841b85df7f7",
+    "done": false,
+    "description": "Throw the trash!"
+  }
+]
