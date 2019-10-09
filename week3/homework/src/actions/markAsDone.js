@@ -2,7 +2,7 @@
 
 function markAsDone(todo, request, response) {
   const id = request.params.id;
-  todo.notDone(id)
+  todo.done(id)
 
     .then(todo => {
       response.status(200);
