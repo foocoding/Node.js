@@ -31,5 +31,5 @@ if (command === 'addTodo') {
 } else if (command === 'printHelp') {
   help.printHelp();
 } else {
-  console.log('Invalid command.');
+  console.log('Invalid command.Please try again.');
 }

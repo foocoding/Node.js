@@ -23,7 +23,7 @@ let saveTodos = todos => {
 
 let logTodo = todo => {
   console.log('------');
-  console.log(`It's title is: ${todo.title}`);
+  console.log(`Its title is: ${todo.title}`);
 };
 
 module.exports = {
