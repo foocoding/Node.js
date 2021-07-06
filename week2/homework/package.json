@@ -4,6 +4,9 @@
   "description": "HackYourFuture Node.js Week 2 - Homework",
   "repository": "https://github.com/HackYourFuture/nodejs.git",
   "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "author": "George Sapkin",
   "license": "MIT",
   "devDependencies": {
